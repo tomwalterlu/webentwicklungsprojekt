@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Studienablaufpläne</title>
+		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" href="style.css" />
+		<script defer src="main.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div id="branding">
+					<h1><span class="highlight">Studi</span>-Planner</h1>
+				</div>
+			</div>
+		</header>
+		<div class = "container"><table id = "Tabelle", table class ="center"></table></div>
+		<section id="courseEditor">
+			<div class="container">
+				<h1>Config</h1>
+				<p id="configStatus">&ensp;</p>
+				<p>Bitte geben sie die minimal erlaubten Umfang eines Moduls an:</p>
+				<form id="configForm" onsubmit="return false">
+					<input type="number" id="minECTS" placeholder="Positive Zahl" required>
+					<input type="submit">
+				</form>
+			</div>
+		</section>
+	</body>
+</html>

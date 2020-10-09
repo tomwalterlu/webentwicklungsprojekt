@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Studienablaufpläne</title>
+		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" href="style.css" />
+		<script defer src="main.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div id="branding">
+					<h1><span class="highlight">Studi</span>-Planner</h1>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="index.html">Start</a></li>
+						<li class="current"><a href=#>Pläne</a></li>
+						<li><a href="course.html">Module</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<section id="planView">
+			<div class="container">
+				<h1>Pläne</h1>
+				<p id="planStatus">&nbsp;</p>
+				<form id="planForm" onsubmit="return false">
+					<input type="text" id="planName" placeholder="Name" required>
+					<input type="number" id="semCount" placeholder="Anz. Semester" required>
+					<input type="number" id="modCount" placeholder="ECTS pro Semester" required>
+					<input type="submit" value="Erstellen">
+				</form>
+				<br>
+				<div id="pages"></div>
+				<div class="container" id="planBox"></div>
+				<br>
+			</div>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Studienablaufpläne</title>
+		<link rel="icon" href="favicon.ico" />
+		<link rel="stylesheet" href="style.css" />
+		<script defer src="main.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div id="branding">
+					<h1><span class="highlight">Studi</span>-Planner</h1>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="index.html">Start</a></li>
+						<li><a href="plans.html">Pläne</a></li>
+						<li lass="current"><a href=#>Module</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header> 
+		<section id="courseEditor">
+			<div class="container">
+				<h1>Module</h1>
+				<p id="courseStatus">&nbsp;</p>
+				<form id="courseForm" onsubmit="return false">
+					<input type="text" id="courseName" placeholder="Name" required>
+					<input type="number" id="courseEcts" placeholder="ECTS" required>
+					<input type="submit" value="Send">
+				</form>
+				<br>
+				<table>
+					<thead>
+						<tr>
+							<td>Name</td>
+							<td>ECTS</td>
+							<td>Functions</td>
+						</tr>
+					</thead>
+					<tbody id="courseTable">
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</body>
+</html>

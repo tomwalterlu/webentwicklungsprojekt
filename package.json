@@ -1,0 +1,53 @@
+{
+  "name": "studienablaufplan",
+  "version": "1.0.0",
+  "description": "Web-Entwicklung Hausarbeit",
+  "keywords": [],
+  "author": "Tom Walter, Yannick Ruts",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-cli": "latest",
+    "babel-preset-minify": "latest",
+    "body-parser": "latest",
+    "browserify": "latest",
+    "copyfiles": "latest",
+    "cpx": "latest",
+    "eslint": "latest",
+    "eslint-plugin-sonarjs": "latest",
+    "express": "latest",
+    "fs": "latest",
+    "http-server": "latest",
+    "less": "latest",
+    "less-plugin-clean-css": "latest",
+    "rimraf": "^2.6.3",
+    "sqlite3": "^5.0.0"
+  },
+  "dependencies": {
+    "browser": "latest",
+    "html-to-image": "latest",
+    "print-html-element": "latest",
+    "lorem-ipsum": "latest"
+  },
+  "scripts": {
+    "clean": "npm run clean:dist && npm run clean:plans && rimraf node_modules",
+    "clean:dist": "rimraf dist",
+    "clean:plans": "rimraf plans",
+    "lint": "eslint -c .eslintrc.json webapp/src/js/** && eslint -c .eslintrc.json server/src/**.js && eslint -c .eslintrc.json server/src/js/**.js",
+    "static": "cpx webapp/src/assets/*.* dist && cpx webapp/src/*.html dist",
+    "prestatic": "copyfiles -f webapp/src/html/*.html dist",
+    "css": "lessc webapp/src/styles/style.less dist/style.css",
+    "css:min": "lessc --clean-css webapp/src/styles/style.less dist/style.css",
+    "js": "browserify webapp/src/js/Main.js > dist/main.js",
+    "js:min": "browserify webapp/src/js/Main.js > dist/main_old.js && npm run js && babel dist/main_old.js > dist/main.js",
+    "postjs:min": "rimraf dist/main_old.js",
+    "predebug": "npm run lint",
+    "debug": "npm run clean:dist && mkdir dist && npm run static && npm run css && npm run js",
+    "prebuild": "npm run lint",
+    "build": "npm run clean:dist && mkdir dist && npm run static && npm run css:min && npm run js:min",
+    "start": "npm run clean:plans && node server/src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.fsi.hochschule-trier.de/waltert/webentwicklungprojekt"
+  }
+}
